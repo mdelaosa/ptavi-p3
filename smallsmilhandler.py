@@ -28,8 +28,8 @@ class SmallSMILHandler(ContentHandler):
             self.width = attrs.get("width", "")
             self.height = attrs.get("height", "")
             self.background_color = attrs.get("background-color", "")
-            self.data.append(name)
-            self.data.append({"width": self.width, "height": self.height,
+            self.data.append({"name": name, "width": self.width,
+                              "height": self.height,
                               "background-color": self.background_color})
 
         elif name == "region":
@@ -38,8 +38,7 @@ class SmallSMILHandler(ContentHandler):
             self.bottom = attrs.get("bottom", "")
             self.left = attrs.get("left", "")
             self.right = attrs.get("right", "")
-            self.data.append(name)
-            self.data.append({"id": self.id, "top": self.top,
+            self.data.append({"name": name, "id": self.id, "top": self.top,
                               "bottom": self.bottom, "left": self.left,
                               "right": self.right})
 
@@ -48,24 +47,23 @@ class SmallSMILHandler(ContentHandler):
             self.region = attrs.get("region", "")
             self.begin = attrs.get("begin", "")
             self.dur = attrs.get("dur")
-            self.data.append(name)
-            self.data.append({"src": self.src, "region": self.region,
-                              "begin": self.begin, "dur": self.dur})
+            self.data.append({"name": name, "src": self.src,
+                              "region": self.region, "begin": self.begin,
+                              "dur": self.dur})
 
         elif name == "audio":
             self.src = attrs.get("src", "")
             self.begin = attrs.get("begin", "")
             self.dur = attrs.get("dur", "")
-            self.data.append(name)
-            self.data.append({"src": self.src, "begin": self.begin,
-                              "dur": self.dur})
+            self.data.append({"name": name, "src": self.src,
+                              "begin": self.begin, "dur": self.dur})
 
         elif name == "textstream":
 
             self.src = attrs.get("src", "")
             self.region = attrs.get("region", "")
-            self.data.append(name)
-            self.data.append({"src": self.src, "region": self.region})
+            self.data.append({"name": name, "src": self.src,
+                              "region": self.region})
 
     def get_tags(self):
         return self.data
