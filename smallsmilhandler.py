@@ -31,7 +31,6 @@ class SmallSMILHandler(ContentHandler):
             self.data.append({"name": name, "width": self.width,
                               "height": self.height,
                               "background-color": self.background_color})
-
         elif name == "region":
             self.id = attrs.get("id", "")
             self.top = attrs.get("top", "")
@@ -41,7 +40,6 @@ class SmallSMILHandler(ContentHandler):
             self.data.append({"name": name, "id": self.id, "top": self.top,
                               "bottom": self.bottom, "left": self.left,
                               "right": self.right})
-
         elif name == "img":
             self.src = attrs.get("src", "")
             self.region = attrs.get("region", "")
@@ -50,16 +48,13 @@ class SmallSMILHandler(ContentHandler):
             self.data.append({"name": name, "src": self.src,
                               "region": self.region, "begin": self.begin,
                               "dur": self.dur})
-
         elif name == "audio":
             self.src = attrs.get("src", "")
             self.begin = attrs.get("begin", "")
             self.dur = attrs.get("dur", "")
             self.data.append({"name": name, "src": self.src,
                               "begin": self.begin, "dur": self.dur})
-
         elif name == "textstream":
-
             self.src = attrs.get("src", "")
             self.region = attrs.get("region", "")
             self.data.append({"name": name, "src": self.src,
