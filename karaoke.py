@@ -11,7 +11,7 @@ import smallsmilhandler
 from xml.sax import make_parser
 
 
-def to_json(self, filesmil, filejson=''):
+def convertirjson(self, filesmil, filejson=''):
     if filejson == '':
         filejson = filesmil.replace('.smil', '.json')
 
