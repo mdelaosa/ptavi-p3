@@ -6,8 +6,18 @@ Created on Mon Oct  8 16:53:07 2018
 @author: mdelaosa
 """
 import sys
+import json
 import smallsmilhandler
 from xml.sax import make_parser
+
+
+def to_json(self, filesmil, filejson=''):
+    if filejson == '':
+        filejson = filesmil.replace('.smil', '.json')
+
+    with open(filejson, 'w') as jsonfile:
+        json.dump(data, jsonfile, indent=3)
+
 
 if __name__ == '__main__':
 
