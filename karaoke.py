@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Oct  8 16:53:07 2018
-
-@author: mdelaosa
-"""
 import sys
 import json
 import smallsmilhandler
