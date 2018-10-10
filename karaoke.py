@@ -23,5 +23,5 @@ if __name__ == '__main__':
         for atributo in data:
             for datos in atributo:
                 if atributo[datos] != '':
-                    print(datos, '=', atributo[datos], end='\t')
+                    print(datos, "=", "'", atributo[datos], "'", end='\t')
             print(end='\n')
