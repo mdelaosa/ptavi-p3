@@ -30,8 +30,10 @@ if __name__ == '__main__':
         parser.parse(open(sys.argv[1]))
         data = karaokesmill.get_tags()
 
-        for atributo in data:
-            for datos in atributo:
-                if atributo[datos] != '':
-                    print(datos, "=", "'", atributo[datos], "'", end='\t')
+        for datos in data:
+            for atributo, valor in datos.items():
+                if atributo == 'name':
+                    print(valor, end='\t')
+                if valor != '' and atributo != 'name':
+                    print(atributo, "=", "'", valor, "'", end='\t')
             print(end='\n')
