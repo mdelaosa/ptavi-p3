@@ -9,18 +9,6 @@ from xml.sax.handler import ContentHandler
 class SmallSMILHandler(ContentHandler):
 
     def __init__(self):
-        self.width = ""
-        self.height = ""
-        self.background_color = ""
-        self.id = ""
-        self.top = ""
-        self.bottom = ""
-        self.left = ""
-        self.right = ""
-        self.src = ""
-        self.region = ""
-        self.begin = ""
-        self.dur = ""
         self.data = []
 
     def startElement(self, name, attrs):
