@@ -23,10 +23,6 @@ class KaraokeLocal:
     def __str__(self):
         for datos in self.data:
             for atributo, valor in datos.items():
-                if atributo == 'src':
-                    if valor.startswith('http://'):
-                        url = valor.split('/')[-1]
-                        valor = url
                 if atributo == 'name':
                     resultado = valor
                 elif valor != '' and atributo != 'name':
@@ -56,7 +52,7 @@ if __name__ == '__main__':
     else:
         file = sys.argv[1]
         karaoke = KaraokeLocal(file)
-        print(karaoke.__str__())
+        print(karaoke)
         karaoke.to_json(file)
         karaoke.do_local()
         karaoke.to_json(file, 'local.json')
