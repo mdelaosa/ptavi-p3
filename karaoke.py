@@ -30,9 +30,9 @@ if __name__ == '__main__':
             for atributo, valor in datos.items():
                 if atributo == 'src':
                     if valor.startswith('http://'):
-                        archivo = valor.split('/')[-1]
+                        url = valor.split('/')[-1]
                         urllib.request.urlretrieve(valor)
-                        valor = archivo
+                        valor = url
                 if atributo == 'name':
                     print(valor, end='\t')
                 if valor != '' and atributo != 'name':
