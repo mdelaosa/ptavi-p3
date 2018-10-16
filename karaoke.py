@@ -21,13 +21,15 @@ class KaraokeLocal:
             sys.exit("Usage: python3 karaoke.py file.smil.")
 
     def __str__(self):
+        resultado = ''
         for datos in self.data:
             for atributo, valor in datos.items():
                 if atributo == 'name':
-                    resultado = valor
-                elif valor != '' and atributo != 'name':
+                    resultado += valor
+                if valor != "" and atributo != 'name':
                     resultado += '\t' + atributo + "= '" + valor + "'"
-            return resultado
+            resultado += '\n'
+        return resultado
 
     def do_local(self):
         for datos in self.data:
@@ -36,7 +38,7 @@ class KaraokeLocal:
                     if valor.startswith('http://'):
                         url = valor.split('/')[-1]
                         urllib.request.urlretrieve(valor, url)
-                        valor = url
+                        datos['src'] = url
 
     def to_json(self, file, fichjson=''):
         if fichjson == '':
